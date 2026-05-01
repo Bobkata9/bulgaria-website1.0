@@ -57,6 +57,44 @@ nav {
     align-items: center;
 }
 
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.burgas-link {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    padding: 0.3rem 0.8rem;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 8px;
+    transition: var(--transition);
+    opacity: 0.7;
+}
+
+.burgas-link:hover, .burgas-link.active {
+    opacity: 1;
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+    background: rgba(99, 102, 241, 0.05);
+}
+
+.logo-link {
+    text-decoration: none;
+    transition: var(--transition);
+    padding: 0.3rem 0.8rem;
+    border-radius: 8px;
+    border: 1px solid transparent;
+}
+
+.logo-link.active {
+    border-color: rgba(0, 150, 110, 0.3);
+    background: rgba(0, 150, 110, 0.05);
+}
+
 .logo {
     font-size: 1.8rem;
     font-weight: 700;
@@ -369,5 +407,14 @@ nav {
 
     .logo {
         font-size: 1.5rem;
+    }
+
+    .nav-brand {
+        gap: 0.8rem;
+    }
+
+    .burgas-link {
+        font-size: 1rem;
+        padding: 0.2rem 0.5rem;
     }
 }
