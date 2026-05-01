@@ -125,6 +125,54 @@ const translations = {
         back_to_home: "Zurück zur Startseite",
         history_page_title: "Geschichte Bulgariens",
         dates_page_title: "Wichtige Daten"
+    },
+    el: {
+        nav_home: "Αρχική",
+        nav_history: "Ιστορία",
+        nav_treasures: "Θησαυροί",
+        nav_dates: "Σημαντικές Ημερομηνίες",
+        hero_title: "Βουλγαρία",
+        history_title: "Ιστορία",
+        history_desc: "Η Βουλγαρία έχει μια πλούσια και αρχαία ιστορία που εκτείνεται σε χιλιετίες. Από τους αρχαίους Θράκες μέχρι το σύγχρονο κράτος, κάθε εποχή έχει αφήσει το στίγμα της.",
+        treasures_title: "Θησαυροί",
+        treasures_desc: "Η Βουλγαρία φιλοξενεί μερικούς από τους πιο εντυπωσιακούς αρχαίους θησαυρούς στον κόσμο, αποκαλύπτοντας το μεγαλείο των αρχαίων πολιτισμών.",
+        btn_learn_more: "Μάθετε περισσότερα",
+        btn_discover_more: "Ανακαλύψτε περισσότερα",
+        back_to_home: "Επιστροφή στην αρχική",
+        history_page_title: "Ιστορία της Βουλγαρίας",
+        dates_page_title: "Σημαντικές Ημερομηνίες"
+    },
+    fr: {
+        nav_home: "Accueil",
+        nav_history: "Histoire",
+        nav_treasures: "Trésors",
+        nav_dates: "Dates Importantes",
+        hero_title: "Bulgarie",
+        history_title: "Histoire",
+        history_desc: "La Bulgarie possède une histoire riche et ancienne s'étendant sur des millénaires. Des anciens Thraces à l'État moderne, chaque époque a laissé sa trace.",
+        treasures_title: "Trésors",
+        treasures_desc: "La Bulgarie abrite certains des trésors anciens les plus impressionnants au monde, révélant la grandeur des civilisations anciennes.",
+        btn_learn_more: "En savoir plus",
+        btn_discover_more: "Découvrir plus",
+        back_to_home: "Retour à l'accueil",
+        history_page_title: "Histoire de la Bulgarie",
+        dates_page_title: "Dates Importantes"
+    },
+    zh: {
+        nav_home: "首页",
+        nav_history: "历史",
+        nav_treasures: "宝藏",
+        nav_dates: "重要日期",
+        hero_title: "保加利亚",
+        history_title: "历史",
+        history_desc: "保加利亚拥有跨越数千年的丰富而古老的历史。从古色雷斯人到现代国家，每个时代都留下了烙印。",
+        treasures_title: "宝藏",
+        treasures_desc: "保加利亚拥有世界上一些最令人印象深刻的古代宝藏，揭示了古代文明的伟大。",
+        btn_learn_more: "了解更多",
+        btn_discover_more: "发现更多",
+        back_to_home: "返回首页",
+        history_page_title: "保加利亚历史",
+        dates_page_title: "重要日期"
     }
 };
 
@@ -140,7 +188,13 @@ function setLanguage(lang) {
     });
 
     const logo = document.querySelector(".logo");
-    if (logo) logo.textContent = (lang === "bg" || lang === "en") ? "Bulgaria" : "Bulgarien";
+    if (logo) {
+        if (lang === "bg" || lang === "en") logo.textContent = "Bulgaria";
+        else if (lang === "de") logo.textContent = "Bulgarien";
+        else if (lang === "el") logo.textContent = "Βουλγαρία";
+        else if (lang === "fr") logo.textContent = "Bulgarie";
+        else if (lang === "zh") logo.textContent = "保加利亚";
+    }
     
     if (langOptions) langOptions.classList.remove("active");
 }
