@@ -19,10 +19,10 @@
         <nav class="container">
             <div class="logo">Bulgaria</div>
             <ul class="nav-links">
-                <li><a href="#hero">Начало</a></li>
-                <li><a href="#history">История</a></li>
-                <li><a href="#treasures">Съкровища</a></li>
-                <li><a href="dates.html">Важни дати</a></li>
+                <li><a href="#hero" data-i18n="nav_home">Начало</a></li>
+                <li><a href="#history" data-i18n="nav_history">История</a></li>
+                <li><a href="#treasures" data-i18n="nav_treasures">Съкровища</a></li>
+                <li><a href="dates.html" data-i18n="nav_dates">Важни дати</a></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -43,28 +43,46 @@
 
         <section id="history" class="content-section">
             <div class="container">
-                <h2 class="section-title left fade-in">История</h2>
+                <h2 class="section-title left fade-in" data-i18n="history_title">История</h2>
                 <div class="section-content fade-in">
-                    <p style="margin-bottom: 2rem; font-size: 1.1rem; color: var(--text-secondary);">
+                    <p style="margin-bottom: 2rem; font-size: 1.1rem; color: var(--text-secondary);" data-i18n="history_desc">
                         България има богата и древна история, обхващаща хилядолетия. От древните траки до съвременната държава, всяка епоха е оставила своя отпечатък.
                     </p>
-                    <a href="history.html" class="btn">Научи повече</a>
+                    <a href="history.html" class="btn" data-i18n="btn_learn_more">Научи повече</a>
                 </div>
             </div>
         </section>
 
         <section id="treasures" class="content-section treasures-banner">
             <div class="container">
-                <h2 class="section-title left fade-in">Съкровища</h2>
+                <h2 class="section-title left fade-in" data-i18n="treasures_title">Съкровища</h2>
                 <div class="section-content fade-in">
-                    <p style="margin-bottom: 2rem; font-size: 1.1rem; color: var(--text-secondary);">
+                    <p style="margin-bottom: 2rem; font-size: 1.1rem; color: var(--text-secondary);" data-i18n="treasures_desc">
                         България е дом на някои от най-впечатляващите антични съкровища в света, разкриващи величието на древните цивилизации.
                     </p>
-                    <a href="treasures.html" class="btn">Открий повече</a>
+                    <a href="treasures.html" class="btn" data-i18n="btn_discover_more">Открий повече</a>
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+        <button class="lang-btn" id="langBtn">
+            <i class="fas fa-globe"></i>
+        </button>
+        <div class="lang-options" id="langOptions">
+            <button class="lang-option" data-lang="bg" title="Български">
+                <img src="https://flagcdn.com/w40/bg.png" alt="Български">
+            </button>
+            <button class="lang-option" data-lang="en" title="English">
+                <img src="https://flagcdn.com/w40/gb.png" alt="English">
+            </button>
+            <button class="lang-option" data-lang="de" title="Deutsch">
+                <img src="https://flagcdn.com/w40/de.png" alt="Deutsch">
+            </button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

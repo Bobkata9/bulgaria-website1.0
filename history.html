@@ -73,16 +73,16 @@
         <nav class="container">
             <div class="logo">Bulgaria</div>
             <ul class="nav-links">
-                <li><a href="index.html">Начало</a></li>
-                <li><a href="history.html" class="active">История</a></li>
-                <li><a href="dates.html">Важни дати</a></li>
+                <li><a href="index.html" data-i18n="nav_home">Начало</a></li>
+                <li><a href="history.html" class="active" data-i18n="nav_history">История</a></li>
+                <li><a href="dates.html" data-i18n="nav_dates">Важни дати</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="container history-page">
-        <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Назад към началото</a>
-        <h1 class="section-title left fade-in">История на България</h1>
+        <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> <span data-i18n="back_to_home">Назад към началото</span></a>
+        <h1 class="section-title left fade-in" data-i18n="history_page_title">История на България</h1>
         
         <div class="history-content fade-in">
             <p>България е държава с хилядолетна история, чиито корени се губят в дълбоката древност. Разположена на кръстопътя между Европа и Азия, тя е била свидетел на възхода и падението на империи, на велики преселения и културен разцвет.</p>
@@ -104,6 +104,24 @@
             <p>След Априлското въстание и Руско-турската война, България се освобождава през 1878 г. (Санстефански мирен договор). Следват години на бърза модернизация, обединение (Съединението 1885 г.) и борба за национално обединение в поредица от войни. Днес България е горда членка на Европейския съюз и НАТО, съчетавайки своето богато наследство с модерното развитие.</p>
         </div>
     </main>
+
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+        <button class="lang-btn" id="langBtn">
+            <i class="fas fa-globe"></i>
+        </button>
+        <div class="lang-options" id="langOptions">
+            <button class="lang-option" data-lang="bg" title="Български">
+                <img src="https://flagcdn.com/w40/bg.png" alt="Български">
+            </button>
+            <button class="lang-option" data-lang="en" title="English">
+                <img src="https://flagcdn.com/w40/gb.png" alt="English">
+            </button>
+            <button class="lang-option" data-lang="de" title="Deutsch">
+                <img src="https://flagcdn.com/w40/de.png" alt="Deutsch">
+            </button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
