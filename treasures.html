@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Съкровищата на България</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/bulgaria_flag.png">
+    <style>
+        .treasures-page {
+            padding-top: 10rem;
+            padding-bottom: 5rem;
+        }
+        .treasures-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .treasures-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+        .back-link:hover {
+            gap: 0.8rem;
+        }
+        .treasure-card {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+        .treasure-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+        .card-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        .card-btn:hover {
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+    <header id="navbar">
+        <nav class="container">
+            <div class="logo">Bulgaria</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Начало</a></li>
+                <li><a href="dates.html">Важни дати</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container treasures-page">
+        <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Назад към началото</a>
+        <h1 class="section-title left fade-in">Съкровищата на България</h1>
+        
+        <div class="treasures-content fade-in">
+            <p>Българските земи са съхранили невероятни златни и сребърни съкровища, които днес са сред най-ценните експонати в световните музеи.</p>
+            
+            <div class="treasure-card">
+                <h3 style="margin-bottom: 1rem; color: var(--accent-color);">Панагюрското златно съкровище</h3>
+                <p>Едно от най-известните тракийски съкровища в света. Състои се от 9 съда от чисто злато (над 6 кг).</p>
+                <a href="panagyurishte.html" class="card-btn">Прочети повече <i class="fas fa-chevron-right"></i></a>
+            </div>
+            
+            <div class="treasure-card">
+                <h3 style="margin-bottom: 1rem; color: var(--accent-color);">Варненското златно съкровище</h3>
+                <p>Това е най-старото обработено злато в света, датиращо от преди повече от 6000 години.</p>
+                <a href="varna.html" class="card-btn">Прочети повече <i class="fas fa-chevron-right"></i></a>
+            </div>
+            
+            <div class="treasure-card">
+                <h3 style="margin-bottom: 1rem; color: var(--accent-color);">Рогозенското съкровище</h3>
+                <p>Най-голямото по обем тракийско съкровище, състоящо се от 165 сребърни съда.</p>
+                <a href="rogozen.html" class="card-btn">Прочети повече <i class="fas fa-chevron-right"></i></a>
+            </div>
+
+            <div class="treasure-card">
+                <h3 style="margin-bottom: 1rem; color: var(--accent-color);">Вълчитрънското златно съкровище</h3>
+                <p>Съставено от 13 златни предмета с общо тегло 12.5 кг. Едно от най-масивните в Европа.</p>
+                <a href="valchitrun.html" class="card-btn">Прочети повече <i class="fas fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,216 @@
+:root {
+    --bg-color: #ffffff;
+    --bg-card: #f8fafc;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --accent-color: #6366f1;
+    --accent-glow: rgba(99, 102, 241, 0.2);
+    --nav-bg: rgba(255, 255, 255, 0.8);
+    --container-width: 1200px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Header & Nav */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: var(--nav-bg);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 1rem 0;
+    transition: transform 0.3s ease, background 0.3s ease, padding 0.3s ease;
+}
+
+header.nav-hidden {
+    transform: translateY(-100%);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    background: linear-gradient(to right, #ffffff 0%, #ffffff 33%, #00966e 33%, #00966e 66%, #d62612 66%, #d62612 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.3));
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 1rem;
+    transition: var(--transition);
+    opacity: 0.8;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+    opacity: 1;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: var(--transition);
+    background-color: var(--text-primary);
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/shipka1.jpg') center/cover no-repeat;
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.hero-content h1 {
+    font-size: 8rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    font-weight: 700;
+    background: linear-gradient(to right, #ffffff 0%, #ffffff 33%, #00966e 33%, #00966e 66%, #d62612 66%, #d62612 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
+}
+
+
+
+/* Content Sections */
+.content-section {
+    padding: 8rem 0;
+    background-color: var(--bg-color);
+}
+
+.treasures-banner {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./assets/bg tresure.jpg') center/cover no-repeat;
+    background-attachment: fixed;
+    color: white;
+}
+
+.treasures-banner .section-title {
+    color: white;
+}
+
+.treasures-banner .section-title::after {
+    background-color: #ffd700; /* Gold color for treasures */
+}
+
+.section-title {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+.section-title.left {
+    text-align: left;
+}
+
+.section-title.left::after {
+    left: 0;
+    transform: none;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px var(--accent-glow);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px var(--accent-glow);
+    background-color: #4f46e5; /* Slightly darker than accent */
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+    .nav-links {
+        display: none; /* Simple for now */
+    }
+}
