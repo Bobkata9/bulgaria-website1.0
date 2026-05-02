@@ -16,34 +16,80 @@
         .detail-content p { margin-bottom: 1.5rem; font-size: 1.2rem; color: var(--text-secondary); }
         .back-link { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--accent-color); text-decoration: none; font-weight: 600; margin-bottom: 2rem; transition: var(--transition); }
         .back-link:hover { gap: 0.8rem; }
+        .detail-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin: 2rem 0;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
     </style>
 </head>
 <body>
     <header id="navbar">
         <nav class="container">
-            <div class="logo">Bulgaria</div>
+            <div class="nav-brand">
+                <a href="burgas.html" class="burgas-link">Burgas</a>
+                <a href="index.html" class="logo-link">
+                    <div class="logo">Bulgaria</div>
+                </a>
+            </div>
             <ul class="nav-links">
-                <li><a href="index.html">Начало</a></li>
-                <li><a href="treasures.html">Съкровища</a></li>
+                <li><a href="index.html" data-i18n="nav_home">Начало</a></li>
+                <li><a href="treasures.html" data-i18n="nav_treasures">Съкровища</a></li>
+                <li><a href="dates.html" data-i18n="nav_dates">Важни дати</a></li>
             </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </nav>
     </header>
 
     <main class="container detail-page">
-        <a href="treasures.html" class="back-link"><i class="fas fa-arrow-left"></i> Назад към съкровищата</a>
-        <h1 class="section-title left fade-in">Вълчитрънско златно съкровище</h1>
+        <a href="treasures.html" class="back-link"><i class="fas fa-arrow-left"></i> <span data-i18n="back_to_treasures">Назад към съкровищата</span></a>
+        <h1 class="section-title left fade-in" data-i18n="treasure_val_title">Вълчитрънското златно съкровище</h1>
         
         <div class="detail-content fade-in">
-            <p>Вълчитрънското златно съкровище е най-голямото златно съкровище, откривано в България по отношение на теглото. То е намерено през 1924 г. в село Вълчитрън, Плевенско.</p>
+            <p data-i18n="treasure_val_p1">Вълчитрънското златно съкровище е едно от най-загадъчните и масивни съкровища в света. То е открито през 1924 г. в село Вълчитрън, Плевенско.</p>
             
-            <p>Съкровището се състои от 13 предмета с общо тегло 12.425 кг чисто злато с естествени примеси от сребро, мед и желязо. Предметите датират от края на бронзовата епоха (XVI–XII в. пр.н.е.).</p>
+            <img src="assets/vullchitrun.jpg" alt="Valchitrun Gold Treasure" class="detail-image">
             
-            <h3 style="margin: 2rem 0 1rem; font-size: 1.8rem;">Уникални предмети:</h3>
-            <p>Най-впечатляващият предмет е огромният киликс (чаша с две дръжки), тежащ над 4.5 кг. Включени са още един голям и три малки кантароса, както и седем похлупака. Изключително интересен е и троен съд, съставен от три бадемовидни тела, свързани с тръбички.</p>
+            <p data-i18n="treasure_val_p2">Съкровището се състои от 13 златни предмета с общо тегло 12.5 кг чисто злато. Най-впечатляващ е големият кантарос (съд за вино) с две дръжки, тежащ над 4 кг.</p>
             
-            <p>Тези предмети са били използвани за религиозни ритуали от тракийските жреци-крале. Тяхната масивност и изчистена форма демонстрират изключителното богатство и естетически вкус на древните траки.</p>
+            <p data-i18n="treasure_val_p3">Предметите датират от края на бронзовата епоха (XIV-XIII в. пр.н.е.). Те са били използвани за религиозни ритуали от тракийските жреци-царе.</p>
         </div>
     </main>
+
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+        <button class="lang-btn" id="langBtn">
+            <i class="fas fa-globe"></i>
+        </button>
+        <div class="lang-options" id="langOptions">
+            <button class="lang-option" data-lang="bg" title="Български">
+                <img src="assets/bulgaria.png" alt="Български">
+            </button>
+            <button class="lang-option" data-lang="en" title="English">
+                <img src="assets/england.jpg" alt="English">
+            </button>
+            <button class="lang-option" data-lang="de" title="Deutsch">
+                <img src="assets/germany.png" alt="Deutsch">
+            </button>
+            <button class="lang-option" data-lang="el" title="Ελληνικά">
+                <img src="assets/greece.png" alt="Ελληνικά">
+            </button>
+            <button class="lang-option" data-lang="fr" title="Français">
+                <img src="assets/french.png" alt="Français">
+            </button>
+            <button class="lang-option" data-lang="zh" title="中文">
+                <img src="assets/china.png" alt="中文">
+            </button>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

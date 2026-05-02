@@ -66,46 +66,84 @@
 <body>
     <header id="navbar">
         <nav class="container">
-            <div class="logo">Bulgaria</div>
+            <div class="nav-brand">
+                <a href="burgas.html" class="burgas-link">Burgas</a>
+                <a href="index.html" class="logo-link">
+                    <div class="logo">Bulgaria</div>
+                </a>
+            </div>
             <ul class="nav-links">
-                <li><a href="index.html">Начало</a></li>
-                <li><a href="dates.html">Важни дати</a></li>
+                <li><a href="index.html" data-i18n="nav_home">Начало</a></li>
+                <li><a href="treasures.html" class="active" data-i18n="nav_treasures">Съкровища</a></li>
+                <li><a href="dates.html" data-i18n="nav_dates">Важни дати</a></li>
             </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </nav>
     </header>
 
     <main class="container treasures-page">
-        <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Назад към началото</a>
-        <h1 class="section-title left fade-in">Съкровищата на България</h1>
+        <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> <span data-i18n="back_to_home">Назад към началото</span></a>
+        <h1 class="section-title left fade-in" data-i18n="treasures_page_title">Съкровищата на България</h1>
         
         <div class="treasures-content fade-in">
-            <p>Българските земи са съхранили невероятни златни и сребърни съкровища, които днес са сред най-ценните експонати в световните музеи.</p>
+            <p data-i18n="treasures_page_desc">Българските земи са съхранили невероятни златни и сребърни съкровища, които днес са сред най-ценните експонати в световните музеи.</p>
             
             <div class="treasure-card">
-                <h3 style="margin-bottom: 1rem; color: var(--accent-color);">Панагюрското златно съкровище</h3>
-                <p>Едно от най-известните тракийски съкровища в света. Състои се от 9 съда от чисто злато (над 6 кг).</p>
-                <a href="panagyurishte.html" class="card-btn">Прочети повече <i class="fas fa-chevron-right"></i></a>
+                <h3 style="margin-bottom: 1rem; color: var(--accent-color);" data-i18n="treasure_pan_title">Панагюрското златно съкровище</h3>
+                <p data-i18n="treasure_pan_short">Едно от най-известните тракийски съкровища в света. Състои се от 9 съда от чисто злато (над 6 кг).</p>
+                <a href="panagyurishte.html" class="card-btn" data-i18n="btn_read_more">Прочети повече <i class="fas fa-chevron-right"></i></a>
             </div>
             
             <div class="treasure-card">
-                <h3 style="margin-bottom: 1rem; color: var(--accent-color);">Варненското златно съкровище</h3>
-                <p>Това е най-старото обработено злато в света, датиращо от преди повече от 6000 години.</p>
-                <a href="varna.html" class="card-btn">Прочети повече <i class="fas fa-chevron-right"></i></a>
+                <h3 style="margin-bottom: 1rem; color: var(--accent-color);" data-i18n="treasure_var_title">Варненското златно съкровище</h3>
+                <p data-i18n="treasure_var_short">Това е най-старото обработено злато в света, датиращо от преди повече от 6000 години.</p>
+                <a href="varna.html" class="card-btn" data-i18n="btn_read_more">Прочети повече <i class="fas fa-chevron-right"></i></a>
             </div>
             
             <div class="treasure-card">
-                <h3 style="margin-bottom: 1rem; color: var(--accent-color);">Рогозенското съкровище</h3>
-                <p>Най-голямото по обем тракийско съкровище, състоящо се от 165 сребърни съда.</p>
-                <a href="rogozen.html" class="card-btn">Прочети повече <i class="fas fa-chevron-right"></i></a>
+                <h3 style="margin-bottom: 1rem; color: var(--accent-color);" data-i18n="treasure_rog_title">Рогозенското съкровище</h3>
+                <p data-i18n="treasure_rog_short">Най-голямото по обем тракийско съкровище, състоящо се от 165 сребърни съда.</p>
+                <a href="rogozen.html" class="card-btn" data-i18n="btn_read_more">Прочети повече <i class="fas fa-chevron-right"></i></a>
             </div>
 
             <div class="treasure-card">
-                <h3 style="margin-bottom: 1rem; color: var(--accent-color);">Вълчитрънското златно съкровище</h3>
-                <p>Съставено от 13 златни предмета с общо тегло 12.5 кг. Едно от най-масивните в Европа.</p>
-                <a href="valchitrun.html" class="card-btn">Прочети повече <i class="fas fa-chevron-right"></i></a>
+                <h3 style="margin-bottom: 1rem; color: var(--accent-color);" data-i18n="treasure_val_title">Вълчитрънското златно съкровище</h3>
+                <p data-i18n="treasure_val_short">Съставено от 13 златни предмета с общо тегло 12.5 кг. Едно от най-масивните в Европа.</p>
+                <a href="valchitrun.html" class="card-btn" data-i18n="btn_read_more">Прочети повече <i class="fas fa-chevron-right"></i></a>
             </div>
         </div>
     </main>
+
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+        <button class="lang-btn" id="langBtn">
+            <i class="fas fa-globe"></i>
+        </button>
+        <div class="lang-options" id="langOptions">
+            <button class="lang-option" data-lang="bg" title="Български">
+                <img src="assets/bulgaria.png" alt="Български">
+            </button>
+            <button class="lang-option" data-lang="en" title="English">
+                <img src="assets/england.jpg" alt="English">
+            </button>
+            <button class="lang-option" data-lang="de" title="Deutsch">
+                <img src="assets/germany.png" alt="Deutsch">
+            </button>
+            <button class="lang-option" data-lang="el" title="Ελληνικά">
+                <img src="assets/greece.png" alt="Ελληνικά">
+            </button>
+            <button class="lang-option" data-lang="fr" title="Français">
+                <img src="assets/french.png" alt="Français">
+            </button>
+            <button class="lang-option" data-lang="zh" title="中文">
+                <img src="assets/china.png" alt="中文">
+            </button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

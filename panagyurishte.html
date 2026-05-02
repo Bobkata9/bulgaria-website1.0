@@ -16,34 +16,83 @@
         .detail-content p { margin-bottom: 1.5rem; font-size: 1.2rem; color: var(--text-secondary); }
         .back-link { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--accent-color); text-decoration: none; font-weight: 600; margin-bottom: 2rem; transition: var(--transition); }
         .back-link:hover { gap: 0.8rem; }
+        .detail-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin: 2rem 0;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
     </style>
 </head>
 <body>
     <header id="navbar">
         <nav class="container">
-            <div class="logo">Bulgaria</div>
+            <div class="nav-brand">
+                <a href="burgas.html" class="burgas-link">Burgas</a>
+                <a href="index.html" class="logo-link">
+                    <div class="logo">Bulgaria</div>
+                </a>
+            </div>
             <ul class="nav-links">
-                <li><a href="index.html">Начало</a></li>
-                <li><a href="treasures.html">Съкровища</a></li>
+                <li><a href="index.html" data-i18n="nav_home">Начало</a></li>
+                <li><a href="treasures.html" data-i18n="nav_treasures">Съкровища</a></li>
+                <li><a href="dates.html" data-i18n="nav_dates">Важни дати</a></li>
             </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </nav>
     </header>
 
     <main class="container detail-page">
-        <a href="treasures.html" class="back-link"><i class="fas fa-arrow-left"></i> Назад към съкровищата</a>
-        <h1 class="section-title left fade-in">Панагюрско златно съкровище</h1>
+        <a href="treasures.html" class="back-link"><i class="fas fa-arrow-left"></i> <span data-i18n="back_to_treasures">Назад към съкровищата</span></a>
+        <h1 class="section-title left fade-in" data-i18n="treasure_pan_title">Панагюрско златно съкровище</h1>
         
         <div class="detail-content fade-in">
-            <p>Панагюрското златно съкровище е най-известното тракийско съкровище в света. То е открито на 8 декември 1949 г. от трима братя – Павел, Петко и Михаил Дейкови, по време на изкопни работи в околностите на град Панагюрище.</p>
+            <p data-i18n="treasure_pan_p1">Панагюрското златно съкровище е най-известното тракийски съкровище в света. То е открито на 8 декември 1949 г. от трима братя – Павел, Петко и Михаил Дейкови, по време на изкопни работи в околностите на град Панагюрище.</p>
             
-            <p>Съкровището се състои от 9 съда, изработени от чисто злато (23-каратово) с общо тегло 6.164 кг. Комплектът включва една фиала и осем ритона, украсени с изключително сложни и детайлни сцени от античната митология.</p>
+            <img src="assets/panagurishte.jfif" alt="Panagyurishte Gold Treasure" class="detail-image">
             
-            <h3 style="margin: 2rem 0 1rem; font-size: 1.8rem;">Описание на съдовете:</h3>
-            <p>Централният съд е амфора-ритон, чиито дръжки са оформени като борещи се кентаври. Други ритони изобразяват глави на животни (овен, елен) и на богини (Атина, Хера, Афродита).</p>
+            <p data-i18n="treasure_pan_p2">Съкровището се състои от 9 съда, изработени от чисто злато (23-каратово) с общо тегло 6.164 кг. Комплектът включва една фиала и осем ритона, украсени с изключително сложни и детайлни сцени от античната митология.</p>
             
-            <p>Предполага се, че съкровището е било собственост на владетел на одрисите от края на IV или началото на III в. пр.н.е. То е използвано за ритуални цели и пиршества, демонстрирайки богатството и високата култура на траките.</p>
+            <h3 style="margin: 2rem 0 1rem; font-size: 1.8rem;" data-i18n="treasure_pan_desc_title">Описание на съдовете:</h3>
+            <p data-i18n="treasure_pan_p3">Централният съд е амфора-ритон, чиито дръжки са оформени като борещи се кентаври. Други ритони изобразяват глави на животни (овен, елен) и на богини (Атина, Хера, Афродита).</p>
+            
+            <p data-i18n="treasure_pan_p4">Предполага се, че съкровището е било собственост на владетел на одрисите от края на IV или началото на III в. пр.н.е. То е използвано за ритуални цели и пиршества, демонстрирайки богатството и високата култура на траките.</p>
         </div>
     </main>
+
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+        <button class="lang-btn" id="langBtn">
+            <i class="fas fa-globe"></i>
+        </button>
+        <div class="lang-options" id="langOptions">
+            <button class="lang-option" data-lang="bg" title="Български">
+                <img src="assets/bulgaria.png" alt="Български">
+            </button>
+            <button class="lang-option" data-lang="en" title="English">
+                <img src="assets/england.jpg" alt="English">
+            </button>
+            <button class="lang-option" data-lang="de" title="Deutsch">
+                <img src="assets/germany.png" alt="Deutsch">
+            </button>
+            <button class="lang-option" data-lang="el" title="Ελληνικά">
+                <img src="assets/greece.png" alt="Ελληνικά">
+            </button>
+            <button class="lang-option" data-lang="fr" title="Français">
+                <img src="assets/french.png" alt="Français">
+            </button>
+            <button class="lang-option" data-lang="zh" title="中文">
+                <img src="assets/china.png" alt="中文">
+            </button>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

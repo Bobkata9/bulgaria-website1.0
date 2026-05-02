@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Рогозенско съкровище</title>
+    <title>Пясъчни фигури - Бургас</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -11,34 +11,48 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="assets/bulgaria_flag.png">
     <style>
-        .detail-page { padding-top: 10rem; padding-bottom: 5rem; }
-        .detail-content { max-width: 800px; margin: 0 auto; }
-        .detail-content p { margin-bottom: 1.5rem; font-size: 1.2rem; color: var(--text-secondary); }
-        .back-link { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--accent-color); text-decoration: none; font-weight: 600; margin-bottom: 2rem; transition: var(--transition); }
-        .back-link:hover { gap: 0.8rem; }
+        .detail-page { padding: 8rem 0; }
+        .detail-content { 
+            line-height: 1.8; 
+            font-size: 1.1rem; 
+            color: var(--text-secondary);
+            margin-top: 3rem;
+        }
+        .detail-content p { margin-bottom: 2rem; }
         .detail-image {
             width: 100%;
-            height: 400px;
+            height: 500px;
             object-fit: cover;
-            border-radius: 20px;
-            margin: 2rem 0;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-radius: 30px;
+            margin: 3rem 0;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+        .back-link:hover { transform: translateX(-5px); }
     </style>
 </head>
 <body>
     <header id="navbar">
         <nav class="container">
             <div class="nav-brand">
-                <a href="burgas.html" class="burgas-link">Burgas</a>
+                <a href="burgas.html" class="burgas-link active">Burgas</a>
                 <a href="index.html" class="logo-link">
                     <div class="logo">Bulgaria</div>
                 </a>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html" data-i18n="nav_home">Начало</a></li>
-                <li><a href="treasures.html" data-i18n="nav_treasures">Съкровища</a></li>
-                <li><a href="dates.html" data-i18n="nav_dates">Важни дати</a></li>
+                <li><a href="pgmee.html">ПГМЕЕ</a></li>
+                <li><a href="burgas.html" data-i18n="nav_home">Начало</a></li>
+                <li><a href="burgas-history.html" data-i18n="nav_history">История</a></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -49,17 +63,15 @@
     </header>
 
     <main class="container detail-page">
-        <a href="treasures.html" class="back-link"><i class="fas fa-arrow-left"></i> <span data-i18n="back_to_treasures">Назад към съкровищата</span></a>
-        <h1 class="section-title left fade-in" data-i18n="treasure_rog_title">Рогозенското съкровище</h1>
+        <a href="burgas.html" class="back-link"><i class="fas fa-arrow-left"></i> <span data-i18n="back_to_burgas">Назад към Бургас</span></a>
+        <h1 class="section-title left fade-in" data-i18n="burgas_sand_details_title">Магията на Пясъчните фигури</h1>
         
         <div class="detail-content fade-in">
-            <p data-i18n="treasure_rog_p1">Рогозенското съкровище е най-голямото по обем тракийско съкровище, откривано някога. То е намерено случайно през 1985-1986 г. в село Рогозен, Врачанско.</p>
+            <p data-i18n="burgas_sand_details_p1">Всяко лято Бургас се превръща в сцена на едно от най-впечатляващите събития в България – Фестивала на пясъчните фигури.</p>
             
-            <img src="assets/rogozensko.jpg" alt="Rogozen Treasure" class="detail-image">
+            <img src="assets/pqsuchni figuri.jpg" alt="Пясъчни фигури" class="detail-image">
             
-            <p data-i18n="treasure_rog_p2">Съкровището се състои от 165 сребърни съда, някои от които са позлатени. Общото им тегло е близо 20 кг. Колекцията включва фиали, кани и една скифос.</p>
-            
-            <p data-i18n="treasure_rog_p3">Съдовете са украсени с богати релефни сцени, изобразяващи тракийски божества, ловни сцени и митологични същества. Много от предметите носят надписи с имената на тракийски владетели и майстори.</p>
+            <p data-i18n="burgas_sand_details_p2">Майстори от цял свят използват хиляди тонове специален пясък, за да извайват герои от приказки, филми и историята. Изложбата е разположена в парк 'Езеро' и е отворена през целия летен сезон.</p>
         </div>
     </main>
 

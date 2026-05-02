@@ -16,34 +16,83 @@
         .detail-content p { margin-bottom: 1.5rem; font-size: 1.2rem; color: var(--text-secondary); }
         .back-link { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--accent-color); text-decoration: none; font-weight: 600; margin-bottom: 2rem; transition: var(--transition); }
         .back-link:hover { gap: 0.8rem; }
+        .detail-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin: 2rem 0;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
     </style>
 </head>
 <body>
     <header id="navbar">
         <nav class="container">
-            <div class="logo">Bulgaria</div>
+            <div class="nav-brand">
+                <a href="burgas.html" class="burgas-link">Burgas</a>
+                <a href="index.html" class="logo-link">
+                    <div class="logo">Bulgaria</div>
+                </a>
+            </div>
             <ul class="nav-links">
-                <li><a href="index.html">Начало</a></li>
-                <li><a href="treasures.html">Съкровища</a></li>
+                <li><a href="index.html" data-i18n="nav_home">Начало</a></li>
+                <li><a href="treasures.html" data-i18n="nav_treasures">Съкровища</a></li>
+                <li><a href="dates.html" data-i18n="nav_dates">Важни дати</a></li>
             </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </nav>
     </header>
 
     <main class="container detail-page">
-        <a href="treasures.html" class="back-link"><i class="fas fa-arrow-left"></i> Назад към съкровищата</a>
-        <h1 class="section-title left fade-in">Варненско златно съкровище</h1>
+        <a href="treasures.html" class="back-link"><i class="fas fa-arrow-left"></i> <span data-i18n="back_to_treasures">Назад към съкровищата</span></a>
+        <h1 class="section-title left fade-in" data-i18n="treasure_var_title">Варненско златно съкровище</h1>
         
         <div class="detail-content fade-in">
-            <p>Варненското златно съкровище е най-старото технологично обработено злато в света. То е открито през 1972 г. по време на археологически разкопки във Варненския халколитен некропол.</p>
+            <p data-i18n="treasure_var_p1">Варненското златно съкровище е най-старото технологично обработено злато в света. То е открито през 1972 г. по време на археологически разкопки във Варненския халколитен некропол.</p>
             
-            <p>Находката датира от края на V хилядолетие пр.н.е. (преди повече от 6000 години). Съкровището включва над 3000 златни предмета с общо тегло около 6 кг, което е изключително количество за онази епоха.</p>
+            <img src="assets/varnensko.jpg" alt="Varna Gold Treasure" class="detail-image">
             
-            <h3 style="margin: 2rem 0 1rem; font-size: 1.8rem;">Историческо значение:</h3>
-            <p>Варненското съкровище доказва съществуването на високоразвита цивилизация край черноморския бряг, наречена "Култура Варна". Тази цивилизация е познавала сложни металургични процеси и е имала ясно изразена социална йерархия.</p>
+            <p data-i18n="treasure_var_p2">Находката датира от края на V хилядолетие пр.н.е. (преди повече от 6000 години). Съкровището включва над 3000 златни предмета с общо тегло около 6 кг, което е изключително количество за онази епоха.</p>
             
-            <p>Най-известният гроб (№43) съдържа останките на мъж, вероятно владетел или жрец, погребан с над 1.5 кг златни предмети, включително златен жезъл – символ на властта.</p>
+            <h3 style="margin: 2rem 0 1rem; font-size: 1.8rem;" data-i18n="treasure_var_desc_title">Историческо значение:</h3>
+            <p data-i18n="treasure_var_p3">Варненското съкровище доказва съществуването на високоразвита цивилизация край черноморския бряг, наречена "Култура Варна". Тази цивилизация е познавала сложни металургични процеси и е имала ясно изразена социална йерархия.</p>
+            
+            <p data-i18n="treasure_var_p4">Най-известният гроб (№43) съдържа останките на мъж, вероятно владетел или жрец, погребан с над 1.5 кг златни предмети, включително златен жезъл – символ на властта.</p>
         </div>
     </main>
+
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+        <button class="lang-btn" id="langBtn">
+            <i class="fas fa-globe"></i>
+        </button>
+        <div class="lang-options" id="langOptions">
+            <button class="lang-option" data-lang="bg" title="Български">
+                <img src="assets/bulgaria.png" alt="Български">
+            </button>
+            <button class="lang-option" data-lang="en" title="English">
+                <img src="assets/england.jpg" alt="English">
+            </button>
+            <button class="lang-option" data-lang="de" title="Deutsch">
+                <img src="assets/germany.png" alt="Deutsch">
+            </button>
+            <button class="lang-option" data-lang="el" title="Ελληνικά">
+                <img src="assets/greece.png" alt="Ελληνικά">
+            </button>
+            <button class="lang-option" data-lang="fr" title="Français">
+                <img src="assets/french.png" alt="Français">
+            </button>
+            <button class="lang-option" data-lang="zh" title="中文">
+                <img src="assets/china.png" alt="中文">
+            </button>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
