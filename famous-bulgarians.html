@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Известни Българи – България</title>
+    <meta name="description" content="Запознайте се с най-известните българи, оставили трайна следа в историята на България и света.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/bulgaria_flag.png">
+    <style>
+        /* ── Page Layout ── */
+        .bulgarians-page {
+            padding-top: 3rem;
+            padding-bottom: 6rem;
+        }
+
+        /* ── Hero Banner ── */
+        .bulgarians-hero {
+            background: linear-gradient(to bottom,
+                            rgba(0, 0, 0, 0.42) 0%,
+                            rgba(0, 0, 0, 0.55) 60%,
+                            rgba(0, 0, 0, 0.65) 100%),
+                        url('assets/boeve.jpg') center 35%/cover no-repeat;
+            min-height: 65vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            /* Push content below the fixed navbar (~80px) */
+            padding: calc(80px + 3rem) 2rem 4rem;
+            position: relative;
+        }
+
+        /* Subtle bottom wave/fade into page background */
+        .bulgarians-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: linear-gradient(to bottom, transparent, var(--bg-color));
+            pointer-events: none;
+        }
+
+        .bulgarians-hero h1 {
+            font-size: clamp(2.2rem, 6vw, 4.8rem);
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            text-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
+            margin: 0 0 1rem;
+            line-height: 1.1;
+            animation: fadeIn 0.9s ease-out;
+        }
+
+        .bulgarians-hero p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            max-width: 520px;
+            line-height: 1.6;
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        /* ── Back Link ── */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2.5rem;
+            transition: var(--transition);
+        }
+        .back-link:hover { gap: 0.8rem; }
+
+        /* ── Section Title ── */
+        .page-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-top: -1.5rem;
+            margin-bottom: 3rem;
+            max-width: 680px;
+        }
+
+        /* ── Grid ── */
+        .bulgarians-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        /* ── Card ── */
+        .bulgarian-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07);
+            border: 1px solid rgba(99, 102, 241, 0.08);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            display: flex;
+            flex-direction: column;
+            animation: fadeIn 0.8s ease-out both;
+        }
+
+        .bulgarian-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(99, 102, 241, 0.18);
+        }
+
+        /* ── Card Image ── */
+        .card-img-wrap {
+            position: relative;
+            height: 260px;
+            overflow: hidden;
+            background: var(--bg-card); /* Fallback */
+            flex-shrink: 0;
+        }
+
+        .card-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center; /* Focus on faces */
+            transition: transform 0.5s ease;
+        }
+
+        .bulgarian-card:hover .card-img-wrap img {
+            transform: scale(1.06);
+        }
+
+        .img-overlay-subtitle {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            backdrop-filter: blur(4px);
+        }
+
+        /* Decorative gradient stripe at top of each card body */
+        .card-stripe {
+            height: 5px;
+            background: linear-gradient(to right, var(--accent-color), #818cf8, #c7d2fe);
+            flex-shrink: 0;
+        }
+
+        /* ── Card Body ── */
+        .card-body {
+            padding: 1.6rem 1.8rem 1.8rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-name {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+            line-height: 1.2;
+        }
+
+        .card-years {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .card-years i {
+            margin-right: 0.3rem;
+            font-size: 0.8rem;
+        }
+
+        .card-desc {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 0.97rem;
+            flex: 1;
+        }
+
+        /* ── Stagger animation delay ── */
+        .bulgarian-card:nth-child(1) { animation-delay: 0.05s; }
+        .bulgarian-card:nth-child(2) { animation-delay: 0.12s; }
+        .bulgarian-card:nth-child(3) { animation-delay: 0.19s; }
+        .bulgarian-card:nth-child(4) { animation-delay: 0.26s; }
+        .bulgarian-card:nth-child(5) { animation-delay: 0.33s; }
+        .bulgarian-card:nth-child(6) { animation-delay: 0.40s; }
+        .bulgarian-card:nth-child(7) { animation-delay: 0.47s; }
+        .bulgarian-card:nth-child(8) { animation-delay: 0.54s; }
+
+        /* (Old backgrounds removed as we now use real images) */
+
+        /* ── Fade-in keyframe (mirrors global style) ── */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            .bulgarians-hero {
+                min-height: 55vh;
+                padding: calc(70px + 2rem) 1.5rem 3.5rem;
+            }
+            .bulgarians-hero h1 { letter-spacing: 3px; }
+            .bulgarians-page { padding-top: 2.5rem; padding-bottom: 4rem; }
+            .bulgarians-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            .card-img-wrap { height: 200px; }
+            .card-body { padding: 1.3rem 1.4rem 1.5rem; }
+        }
+
+        @media (max-width: 480px) {
+            .bulgarians-hero {
+                min-height: 50vh;
+                padding: calc(65px + 1.5rem) 1rem 3rem;
+            }
+            .bulgarians-hero h1 { letter-spacing: 2px; }
+            .card-name { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <header id="navbar">
+        <nav class="container">
+            <div class="nav-brand">
+                <a href="burgas.html" class="burgas-link">Burgas</a>
+                <a href="index.html" class="logo-link active">
+                    <div class="logo">Bulgaria</div>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" data-i18n="nav_home">Начало</a></li>
+                <li><a href="history.html" data-i18n="nav_history">История</a></li>
+                <li><a href="famous-bulgarians.html" class="active" data-i18n="nav_famous">Известни Българи</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="bulgarians-hero">
+        <div>
+            <h1 data-i18n="famous_page_title">Известни Българи</h1>
+            <p data-i18n="famous_page_subtitle">Личности, вдъхновили народ и оставили безсмъртна следа в историята</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container bulgarians-page">
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i>
+            <span data-i18n="back_to_home">Назад към началото</span>
+        </a>
+
+        <div class="bulgarians-grid">
+
+            <!-- 1. Христо Ботев -->
+            <article class="bulgarian-card" id="hristo-botev">
+                <div class="card-img-wrap">
+                    <img src="assets/botev.jfif" alt="Христо Ботев">
+                    <div class="img-overlay-subtitle" data-i18n="botev_subtitle">Поет & Революционер</div>
+                </div>
+                <div class="card-stripe"></div>
+                <div class="card-body">
+                    <div class="card-name" data-i18n="botev_name">Христо Ботев</div>
+                    <div class="card-years"><i class="fas fa-calendar-alt"></i>1848 – 1876</div>
+                    <p class="card-desc" data-i18n="botev_desc">
+                        Христо Ботев е най-великият български революционен поет и национален герой. Неговите стихотворения съчетават дълбок лиризъм с пламенна борба за свобода. Загива на 28-годишна възраст начело на своята чета при Врачанския Балкан, превръщайки се в безсмъртен символ на саможертвата за България.
+                    </p>
+                </div>
+            </article>
+
+            <!-- 2. Васил Левски -->
+            <article class="bulgarian-card" id="vasil-levski">
+                <div class="card-img-wrap">
+                    <img src="assets/levski.jfif" alt="Васил Левски">
+                    <div class="img-overlay-subtitle" data-i18n="levski_subtitle">Апостол на Свободата</div>
+                </div>
+                <div class="card-stripe"></div>
+                <div class="card-body">
+                    <div class="card-name" data-i18n="levski_name">Васил Левски</div>
+                    <div class="card-years"><i class="fas fa-calendar-alt"></i>1837 – 1873</div>
+                    <p class="card-desc" data-i18n="levski_desc">
+                        Наречен „Апостолът на свободата", Васил Левски е организаторът на българската революционна мрежа срещу османското владичество. Изгради Вътрешната революционна организация с клонове из цялата страна. Осъден и обесен от османците, той остава вечен идеал за родолюбие и себеотрицание.
+                    </p>
+                </div>
+            </article>
+
+            <!-- 3. Иван Вазов -->
+            <article class="bulgarian-card" id="ivan-vazov">
+                <div class="card-img-wrap">
+                    <img src="assets/vazov.jfif" alt="Иван Вазов">
+                    <div class="img-overlay-subtitle" data-i18n="vazov_subtitle">Патриарх на литературата</div>
+                </div>
+                <div class="card-stripe"></div>
+                <div class="card-body">
+                    <div class="card-name" data-i18n="vazov_name">Иван Вазов</div>
+                    <div class="card-years"><i class="fas fa-calendar-alt"></i>1850 – 1921</div>
+                    <p class="card-desc" data-i18n="vazov_desc">
+                        Иван Вазов е „Патриархът на българската литература" и автор на националния роман „Под игото". Неговото творчество обхваща поезия, проза и драматургия, и е живо свидетелство за Освобождението и изграждането на модерна България. Без неговото перо образът на националната идентичност би бил непълен.
+                    </p>
+                </div>
+            </article>
+
+            <!-- 4. Джон Атанасов -->
+            <article class="bulgarian-card" id="john-atanasoff">
+                <div class="card-img-wrap">
+                    <img src="assets/atanasov.jfif" alt="Джон Атанасов">
+                    <div class="img-overlay-subtitle" data-i18n="atanasoff_subtitle">Изобретател на компютъра</div>
+                </div>
+                <div class="card-stripe"></div>
+                <div class="card-body">
+                    <div class="card-name" data-i18n="atanasoff_name">Джон Атанасов</div>
+                    <div class="card-years"><i class="fas fa-calendar-alt"></i>1903 – 1995</div>
+                    <p class="card-desc" data-i18n="atanasoff_desc">
+                        Джон Атанасов е американски физик с български произход, признат за изобретател на първия електронен цифров компютър – Atanasoff–Berry Computer (ABC). Приносът му е признат официално с решение на американски федерален съд и множество международни награди. Доказва, че България дава на света и велики учени.
+                    </p>
+                </div>
+            </article>
+
+            <!-- 5. Стефан Стамболов -->
+            <article class="bulgarian-card" id="stefan-stambolov">
+                <div class="card-img-wrap">
+                    <img src="assets/stambolov.jfif" alt="Стефан Стамболов">
+                    <div class="img-overlay-subtitle" data-i18n="stambolov_subtitle">Регент & Държавник</div>
+                </div>
+                <div class="card-stripe"></div>
+                <div class="card-body">
+                    <div class="card-name" data-i18n="stambolov_name">Стефан Стамболов</div>
+                    <div class="card-years"><i class="fas fa-calendar-alt"></i>1854 – 1895</div>
+                    <p class="card-desc" data-i18n="stambolov_desc">
+                        Стефан Стамболов е един от най-силните и противоречиви политически лидери в ранната история на Третата българска държава. Като регент и министър-председател той провежда политика на национална независимост и бърза модернизация. Организира Съединението от 1885 г. и ражда основите на съвременната България.
+                    </p>
+                </div>
+            </article>
+
+            <!-- 6. Паисий Хилендарски -->
+            <article class="bulgarian-card" id="paisiy-hilendarski">
+                <div class="card-img-wrap">
+                    <img src="assets/paisii.jpg" alt="Паисий Хилендарски">
+                    <div class="img-overlay-subtitle" data-i18n="paisiy_subtitle">Отец Паисий</div>
+                </div>
+                <div class="card-stripe"></div>
+                <div class="card-body">
+                    <div class="card-name" data-i18n="paisiy_name">Паисий Хилендарски</div>
+                    <div class="card-years"><i class="fas fa-calendar-alt"></i>1722 – ок. 1773</div>
+                    <p class="card-desc" data-i18n="paisiy_desc">
+                        Светогорският монах Паисий Хилендарски е „будителят" на българския народ, автор на „История славянобългарска" (1762) – първото историческо съчинение на новобългарски език. Трудът му разпалва националното самосъзнание и слага начало на Българското Възраждане. Без него Освобождението щеше да е невъзможно.
+                    </p>
+                </div>
+            </article>
+
+            <!-- 7. Захари Зограф -->
+            <article class="bulgarian-card" id="zahari-zograf">
+                <div class="card-img-wrap">
+                    <img src="assets/zograf.jpg" alt="Захари Зограф">
+                    <div class="img-overlay-subtitle" data-i18n="zograf_subtitle">Майстор живописец</div>
+                </div>
+                <div class="card-stripe"></div>
+                <div class="card-body">
+                    <div class="card-name" data-i18n="zograf_name">Захари Зограф</div>
+                    <div class="card-years"><i class="fas fa-calendar-alt"></i>1810 – 1853</div>
+                    <p class="card-desc" data-i18n="zograf_desc">
+                        Захари Зограф е най-значимият български живописец на Възраждането, украсил стенописите на Рилския, Бачковския и Троянския манастир. Той пръв въвежда реалистичния портрет в българската иконопис и оставя забележителни „Страшни съдилища" с образи на съвременниците си. Творбите му са безценна изобразителна летопис на епохата.
+                    </p>
+                </div>
+            </article>
+
+            <!-- 8. Пенчо Славейков -->
+            <article class="bulgarian-card" id="pencho-slaveykov">
+                <div class="card-img-wrap">
+                    <img src="assets/slaveikov.jpg" alt="Пенчо Славейков">
+                    <div class="img-overlay-subtitle" data-i18n="slaveykov_subtitle">Поет & Философ</div>
+                </div>
+                <div class="card-stripe"></div>
+                <div class="card-body">
+                    <div class="card-name" data-i18n="slaveykov_name">Пенчо Славейков</div>
+                    <div class="card-years"><i class="fas fa-calendar-alt"></i>1866 – 1912</div>
+                    <p class="card-desc" data-i18n="slaveykov_desc">
+                        Пенчо Славейков е символистичен поет, философ и критик, наминиран за Нобелова награда за литература – единственият досега българин в тази ситуация. Неговата епическа поема „Кървава песен" е паметник на Априлското въстание. Като дългогодишен директор на Народната библиотека той влага огромен принос и в развитието на българската култура.
+                    </p>
+                </div>
+            </article>
+
+        </div><!-- /.bulgarians-grid -->
+    </main>
+
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+        <button class="lang-btn" id="langBtn">
+            <i class="fas fa-globe"></i>
+        </button>
+        <div class="lang-options" id="langOptions">
+            <button class="lang-option" data-lang="bg" title="Български">
+                <img src="assets/bulgaria.png" alt="Български">
+            </button>
+            <button class="lang-option" data-lang="en" title="English">
+                <img src="assets/england.jpg" alt="English">
+            </button>
+            <button class="lang-option" data-lang="de" title="Deutsch">
+                <img src="assets/germany.png" alt="Deutsch">
+            </button>
+            <button class="lang-option" data-lang="el" title="Ελληνικά">
+                <img src="assets/greece.png" alt="Ελληνικά">
+            </button>
+            <button class="lang-option" data-lang="fr" title="Français">
+                <img src="assets/french.png" alt="Français">
+            </button>
+            <button class="lang-option" data-lang="zh" title="中文">
+                <img src="assets/china.png" alt="中文">
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
